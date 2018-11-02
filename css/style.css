@@ -110,6 +110,7 @@ header {
     background-color: #3e3b38;
     top: 46px;
     padding: 8px 0;
+    z-index: 2;
 
 }
 
