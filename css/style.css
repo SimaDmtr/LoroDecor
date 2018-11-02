@@ -161,14 +161,22 @@ header {
 
 .banner {
     width: 100%;
-    background: url("../img/content/banner.png") no-repeat center;
-    background-size: cover;
     height: 600px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    overflow: hidden;
+    position: relative;
 }
-
+.img-parallax {
+    width: 100vmax;
+    z-index: -1;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%,0);
+    pointer-events: none
+}
 .banner h1 {
     font-family: Corinthia;
     color: #ffffff;
@@ -806,3 +814,4 @@ header {
 .footer_logo img {
     width: 100%;
 }
+
