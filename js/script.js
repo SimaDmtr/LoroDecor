@@ -1,8 +1,67 @@
 $(document).ready(function () {
     $('.cards_list_wrapper').slick({
         slidesToShow: 5,
-        arrows: false
-    })
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+
+
+        ]
+    });
+    $('.articles_list_wrapper').slick({
+        slidesToShow: 3,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+        ]
+
+    });
 
     $('.best_sale .back').on("click", function () {
         $('.best_sale .cards_list_wrapper').slick("slickPrev");
@@ -19,10 +78,7 @@ $(document).ready(function () {
     });
 
 
-    $('.articles_list_wrapper').slick({
-        slidesToShow: 3,
-        arrows: false,
-    });
+
     $('.articles_items .back').on("click", function () {
         $('.articles_list_wrapper').slick("slickPrev");
     });
@@ -31,24 +87,52 @@ $(document).ready(function () {
     });
     $('.katalog_slide').slideUp(0);
     $(".katalog_trigger").click(function () {
+
         if ($(this).hasClass("show_katalog")) {
             $(this).removeClass("show_katalog");
             $('.katalog_slide').slideUp();
         } else {
-            $(this).addClass("show_katalog");
-            $('.katalog_slide').slideDown();
+            if ($(window).width() < 600) {
+                $('.adaptive_menu').removeClass('active');
+                $(this).addClass("show_katalog");
+                $('.katalog_slide').slideDown();
+                $('.adaptive_menu .katalog_slide').css({top: '-86px'})
+            } else {
+                $(this).addClass("show_katalog");
+                $('.katalog_slide').slideDown();
+            }
         }
     });
     $(document).mouseup(function (e) {
         var container = $(".katalog_slide");
-        if (container.has(e.target).length === 0){
+        if (container.has(e.target).length === 0) {
             container.fadeOut();
         }
     });
-    $('.img-parallax').each(function(){
+    $(".nav_menu_trigger").click(function () {
+        if ($(this).hasClass("active")) {
+            $(kek).removeClass("active");
+        } else {
+            $(kek).addClass("active");
+        }
+    });
+    let kek = $('.katalog_trigger, .adaptive_menu,.nav_menu_trigger')
+    $(document).mouseup(function (e) {
+        var container = $(kek);
+        if (container.has(e.target).length === 0) {
+            container.removeClass('active');
+            $('.menu_item.katalog_trigger').removeClass('show_katalog')
+        }
+
+    });
+
+
+
+    $('.img-parallax').each(function () {
         var img = $(this);
         var imgParent = $(this).parent();
-        function parallaxImg () {
+
+        function parallaxImg() {
             var speed = img.data('speed');
             var imgY = imgParent.offset().top;
             var winY = $(this).scrollTop();
@@ -73,6 +157,7 @@ $(document).ready(function () {
                 transform: 'translate(-50%, -' + imgPercent + '%)'
             });
         }
+
         $(document).on({
             scroll: function () {
                 parallaxImg();
