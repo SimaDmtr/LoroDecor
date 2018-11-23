@@ -425,7 +425,9 @@ header.scrolled{
     position: relative;
     margin-top: 15px;
 }
-
+.main_block_item h2{
+    text-transform: uppercase;
+}
 .main_block_item .slick-slide:focus {
     outline: none;
 }
@@ -671,7 +673,7 @@ header.scrolled{
 .articles_list_wrapper {
     display: flex;
     justify-content: space-between;
-    margin: 0 -13px;
+    margin: 10px  -13px 0 -13px;
     flex-wrap: wrap;
 }
 
@@ -1011,9 +1013,7 @@ header.scrolled{
     margin-top: 30px;
     width: 100%;
 }
-.catalog .breadcrumbs a:first-child{
-    padding: 0 15px;
-}
+
 .left_catalog_wrapper {
     min-width: 212px;
 }
@@ -1912,6 +1912,9 @@ header.scrolled{
 
     .card_small_image_wrapper {
         margin: 0;
+    }
+    .catalog .breadcrumbs a:first-child{
+        padding: 0 15px;
     }
 }
 
