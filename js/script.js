@@ -1,7 +1,23 @@
 $(document).ready(function () {
 
     $('.katalog_slide').slideUp(0);
-    $(".katalog_trigger").click(function () {
+    $(".header_menu:not(.adaptive_menu) .katalog_trigger,.header_menu:not(.adaptive_menu) .katalog_slide").hover(function () {
+        if ($(this).hasClass("show_katalog")) {
+            $(this).removeClass("show_katalog");
+            $('.katalog_slide').slideUp();
+        } else {
+            if ($(window).width() < 600) {
+                $('.adaptive_menu').removeClass('active');
+                $(this).addClass("show_katalog");
+                $('.katalog_slide').slideDown();
+                $('.adaptive_menu .katalog_slide').css({top: '-86px'})
+            } else {
+                $(this).addClass("show_katalog");
+                $('.katalog_slide').slideDown();
+            }
+        }
+    });
+    $(".adaptive_menu .katalog_trigger,.adaptive_menu .katalog_slide").click(function () {
         if ($(this).hasClass("show_katalog")) {
             $(this).removeClass("show_katalog");
             $('.katalog_slide').slideUp();
