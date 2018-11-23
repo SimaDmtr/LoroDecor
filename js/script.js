@@ -1,90 +1,7 @@
 $(document).ready(function () {
-    $('.cards_list_wrapper').slick({
-        slidesToShow: 5,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1100,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 481,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 426,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-        ]
-    });
-    $('.articles_list_wrapper').slick({
-        slidesToShow: 3,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 481,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 426,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-            },
-        ]
 
-    });
-
-    $('.best_sale .back').on("click", function () {
-        $('.best_sale .cards_list_wrapper').slick("slickPrev");
-    });
-    $('.best_sale .next').on("click", function () {
-        $('.best_sale .cards_list_wrapper').slick("slickNext");
-    });
-
-    $('.new_items .back').on("click", function () {
-        $('.new_items .cards_list_wrapper').slick("slickPrev");
-    });
-    $('.new_items .next').on("click", function () {
-        $('.new_items .cards_list_wrapper').slick("slickNext");
-    });
-
-
-    $('.articles_items .back').on("click", function () {
-        $('.articles_list_wrapper').slick("slickPrev");
-    });
-    $('.articles_items .next').on("click", function () {
-        $('.articles_list_wrapper').slick("slickNext");
-    });
     $('.katalog_slide').slideUp(0);
     $(".katalog_trigger").click(function () {
-
         if ($(this).hasClass("show_katalog")) {
             $(this).removeClass("show_katalog");
             $('.katalog_slide').slideUp();
@@ -201,8 +118,98 @@ $(document).ready(function () {
                 }
             },
         ]
-
     })
+        $('.fav').click(function () {
+            if($(this).hasClass('icon-no-fav')){
+                $(this).removeClass('icon-no-fav').addClass('icon-fav')
+            }
+            else{
+                $(this).removeClass('icon-fav').addClass('icon-no-fav')
+            }
+        })
+    $('.cards_list_wrapper').slick({
+        slidesToShow: 5,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+        ]
+    });
+    $('.articles_list_wrapper').slick({
+        slidesToShow: 3,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+        ]
+
+    });
+
+    $('.best_sale .back').on("click", function () {
+        $('.best_sale .cards_list_wrapper').slick("slickPrev");
+    });
+    $('.best_sale .next').on("click", function () {
+        $('.best_sale .cards_list_wrapper').slick("slickNext");
+    });
+
+    $('.new_items .back').on("click", function () {
+        $('.new_items .cards_list_wrapper').slick("slickPrev");
+    });
+    $('.new_items .next').on("click", function () {
+        $('.new_items .cards_list_wrapper').slick("slickNext");
+    });
+
+
+    $('.articles_items .back').on("click", function () {
+        $('.articles_list_wrapper').slick("slickPrev");
+    });
+    $('.articles_items .next').on("click", function () {
+        $('.articles_list_wrapper').slick("slickNext");
+    });
     $('.img-parallax').each(function () {
         var img = $(this);
         var imgParent = $(this).parent();
