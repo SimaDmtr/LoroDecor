@@ -69,6 +69,19 @@ $(document).ready(function () {
             $(this).siblings().find('.left_catalog_item_title').siblings().slideUp();
         }
     })
+
+
+    $(window).scroll(function () {
+        var height = $(window).scrollTop();
+
+        if (height > 1) {
+            $('header').addClass('scrolled');
+        } else {
+            $('header').removeClass('scrolled');
+        }
+    });
+
+
     $('.card_main_image_wrapper').slick({
         slidesToShow: 1,
         arrows: false,
@@ -112,7 +125,7 @@ $(document).ready(function () {
                     slidesToShow: 4,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots:true
+                    dots: true
                 }
             },
             {
@@ -121,7 +134,7 @@ $(document).ready(function () {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots:true
+                    dots: true
                 }
             },
             {
@@ -130,19 +143,18 @@ $(document).ready(function () {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots:true
+                    dots: true
                 }
             },
         ]
     })
-        $('.fav').click(function () {
-            if($(this).hasClass('icon-no-fav')){
-                $(this).removeClass('icon-no-fav').addClass('icon-fav')
-            }
-            else{
-                $(this).removeClass('icon-fav').addClass('icon-no-fav')
-            }
-        })
+    $('.fav').click(function () {
+        if ($(this).hasClass('icon-no-fav')) {
+            $(this).removeClass('icon-no-fav').addClass('icon-fav')
+        } else {
+            $(this).removeClass('icon-fav').addClass('icon-no-fav')
+        }
+    })
     $('.cards_list_wrapper').slick({
         slidesToShow: 5,
         arrows: false,
