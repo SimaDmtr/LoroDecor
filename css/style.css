@@ -699,7 +699,7 @@ button {
     transition: all 0.5s;
 }
 
-.article_item_image:hover img {
+.article_item_wrapper .link:hover img {
     -webkit-transform: scale(1.1, 1.1);
     -moz-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
@@ -728,7 +728,7 @@ button {
     cursor: pointer;
 }
 
-.article_item_image:hover .white_effect {
+.article_item_wrapper .link:hover .white_effect {
     opacity: 0.3;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -737,7 +737,7 @@ button {
     transition: all 0.5s;
 }
 
-.article_item_image:hover .art_item_title {
+.article_item_wrapper .link:hover .art_item_title {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
