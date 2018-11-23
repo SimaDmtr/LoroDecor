@@ -238,30 +238,7 @@
     </div>
 </footer>
 <script src="js/jquery-1.11.0.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFxeIgVHP_kp9PXbIN9cCqFRZ63lks24U&callback=initMap"
-        defer></script>
-<script>
-    function initMap() {
-    }
-
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-        });
-        var uluru = {lat: 52.0904742, lng: 23.6927682};
-        var map = new google.maps.Map(
-            document.getElementById('map'), {
-                zoom: 18,
-                center: uluru,
-            });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            icon: "img/icons/map_icon.png"
-        });
-    }
-</script>
-<script src="js/script.js"></script>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae4993386d8bdfb0cc1c79056710c34279ebded5c4bdb0fc9469b5abdd999d2de&amp;width=100%25&amp;lang=ru_RU&amp;id=map&amp;scroll=true"></script><script src="js/script.js"></script>
 
 </body>
 </html>
