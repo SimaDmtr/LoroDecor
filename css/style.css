@@ -59,6 +59,10 @@ ul {
 header {
     display: flex;
     justify-content: center;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 }
 
 button {
@@ -96,6 +100,7 @@ button {
 
 .header_inner .header_menu {
     display: flex;
+    align-items: center;
 }
 
 .header_inner .header_menu .menu_item {
@@ -109,6 +114,10 @@ button {
 .header_inner .header_menu .katalog_trigger_inner {
     display: flex;
     align-items: center;
+    position: relative;
+    height: 70px;
+
+
 }
 
 .header_inner .header_menu a {
@@ -164,7 +173,7 @@ button {
     position: absolute;
     width: 270px;
     background-color: #3e3b38;
-    top: 46px;
+    top: 70px;
     padding: 8px 0;
     z-index: 2;
     display: none;
